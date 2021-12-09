@@ -1,0 +1,120 @@
+package MavenSelenium.Selenium12;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class FreshSalesProduct {
+public static void main(String[] args) {
+		
+		// System Property for chrome Driver   
+	    System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Selenium\\chromedriver.exe");  
+		
+	    // Create a new instance of the Chrome driver 
+		WebDriver driver = new ChromeDriver();
+		
+		//storing the url in string variable 
+		String url = "https://www.freshworks.com/";
+		//navigate to URL
+		driver.get(url);
+
+		driver.manage().window().maximize();
+		
+		//implicit wait
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		//find product using Xpath and store in txt variable
+		//Product
+		WebElement txt = driver.findElement(By.xpath("/html/body/header/nav/div/div/ul/li[1]"));
+		
+		Actions builder = new Actions(driver);
+		//move to element txt
+		Action seriesOfActions = builder.moveToElement(txt).build();
+		//perform acction
+		seriesOfActions.perform();
+		
+		//finding freshsales and navigating to it
+		driver.findElement(By.xpath("//h6[text()=\"Freshsales\"]")).click();
+		//accepting cookies
+		driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+		///click on product
+		driver.findElement(By.xpath("//li[@class=\"nav-main-item sub-product-card has-sub-menu     \"]/span")).click();
+		//click on Freshsales
+		//driver.findElement(By.xpath("//li[@class=\"nav-sub-item nav-sub-item-sub-product\"]/a")).click();
+		//click on Freshsales Suit
+		driver.findElement(By.xpath("//h6[text()=\"Freshsales Suite\"]")).click();
+		
+		//click on feature
+		//driver.findElement(By.xpath("//li[@class=\"nav-main-item caps-heading-12 has-sub-menu    \"]/span")).click();
+		//click on contact management
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/features/contact-management/\"]/span")).click();
+		//click on cloud telephony
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/features/cloud-telephony/\"]/span")).click();
+		//click on cpq
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/features/cpq/\"]/span")).click();
+		//click on deal management
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/features/deal-management/\"]/span")).click();
+		//click on email integration
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/features/email-integration/\"]/span")).click();
+		//click on Freddy AI
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/freddy-ai/\"]/span")).click();
+		//click on Mobile
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/features/mobile-app/\"]/span")).click();
+		//click on Sales Report
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/features/sales-analytics/\"]/span")).click();
+		//click on All Features
+		//driver.findElement(By.xpath("//li[@class=\"nav-sub-item nav-sub-item-with-button\"]/a")).click();
+		
+		//click on Pricing
+		//driver.findElement(By.xpath("//li[@class=\"nav-main-item caps-heading-12     \"]/a")).click();
+		
+		
+		//click on Resources
+		//driver.findElement(By.xpath("/html/body/header/nav/div[2]/div/ul[1]/li[4]/span")).click();
+		//click on case Study
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/resources/case-study/\"]/span")).click();
+		//click on product tour
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/resources/product-tour/\"]/span")).click();
+		//click on product update
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/resources/product-updates/\"]/span")).click();
+		
+		
+		//click on Industries
+		//driver.findElement(By.xpath("//li[@class=\"nav-main-item caps-heading-12 has-sub-menu\"]/span")).click();
+		//click on Real Estate
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/real-estate/\"]/span")).click();
+		//click on Ecommerce
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/ecommerce/\"]/span")).click();
+		//click on Manufacturing
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/manufacturing/\"]/span")).click();
+		//click on SaaS
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/saas/\"]/span")).click();
+		//click on Hospitality
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/hospitality/\"]/span")).click();
+		//click on Insurance
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/insurance/\"]/span")).click();
+		//click on Logistics
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/logistics/\"]/span")).click();
+		//click on Agency
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/media-agency/\"]/span")).click();
+		//click on Retail
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/retail/\"]/span")).click();
+		//click on Finance
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/finance/\"]/span")).click();
+		//click on Healthcare
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/healthcare/\"]/span")).click();
+		//click on Eduction
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/education/\"]/span")).click();
+		//click on Travel agency
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/travel-agency/\"]/span")).click();
+		//click on law firm
+		//driver.findElement(By.xpath("//a[@href=\"https://www.freshworks.com/crm/industries/law-firm/\"]/span")).click();
+		//driver.close();
+	}
+}
